@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "title": "Front-End Web Development",
+    "description": "Learn to build beautiful and interactive websites.",
+    "topics": ["HTML", "CSS", "JavaScript", "Responsive Design"],
+    "learnableSkills": [
+      "Building web pages",
+      "Styling websites",
+      "Creating interactive elements",
+      "Making websites adaptable to different screen sizes"
+    ],
+    "imageUrl": "https://example.com/images/frontend.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Back-End Web Development",
+    "description": "Power your websites with server-side logic and databases.",
+    "topics": [
+      "Node.js",
+      "Express.js",
+      "Databases (MongoDB, PostgreSQL)",
+      "APIs"
+    ],
+    "learnableSkills": [
+      "Building APIs",
+      "Storing and retrieving data",
+      "Creating server-side applications",
+      "Implementing user authentication"
+    ],
+    "imageUrl": "https://example.com/images/backend.jpg"
+  },
+  {
+    "id": 3,
+    "title": "React JS Development",
+    "description": "Master the popular JavaScript library for building user interfaces.",
+    "topics": ["Components", "JSX", "State Management", "Hooks", "Routing"],
+    "learnableSkills": [
+      "Building dynamic user interfaces",
+      "Creating reusable components",
+      "Managing application state",
+      "Building single-page applications"
+    ],
+    "imageUrl": "https://example.com/images/react.jpg"
+  },
+  {
+    "id": 4,
+    "title": "UI/UX Design",
+    "description": "Design user-centered and visually appealing interfaces.",
+    "topics": [
+      "User Research",
+      "Wireframing",
+      "Prototyping",
+      "Visual Design",
+      "Usability Testing"
+    ],
+    "learnableSkills": [
+      "Conducting user interviews",
+      "Creating wireframes and prototypes",
+      "Designing user flows",
+      "Applying design principles"
+    ],
+    "imageUrl": "https://example.com/images/uiux.jpg"
+  }
+]
