@@ -54,14 +54,22 @@ const courses = [
   'UI/UX Design',
 ];
 
+const urlSearchParams = location.search; // `?selectedCourseIdx=2`;
+const params = new URLSearchParams(urlSearchParams);
+const selectedCourseIdx = params.get("selectedCourseIdx");
+
 function Courses() {
   const [selected, setSelected] = useState(
-    Number(localStorage.getItem('selectedCourseIdx'))
+    Number(selectedCourseIdx || 0)
   );
 
   const handleCourseClick = (idx) => {
     setSelected(idx);
-    localStorage.setItem('selectedCourseIdx', idx);
+    // localStorage.setItem('selectedCourseIdx', idx);
+    const origin = location.origin;
+    const searchParams = `?selectedCourseIdx=${idx}`;
+    const url = origin + searchParams;
+    location.href = url;
   };
 
   return (
