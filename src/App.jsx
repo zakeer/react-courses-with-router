@@ -1,94 +1,40 @@
-import { useState } from 'react';
-import './App.css';
+import CourseCard from "./CourseCard"
+// import courses from "./courses.json"
 
-const names = ['Zakeer', 'Syed', 'Hussain', 'Syed'];
+import "./App.css";
 
-function App() {
-  // let selected = 1;
-  const [selected, setSelected] = useState(1);
+export default function App(props) {
+  return <div>
+    <h1>Courses</h1>
 
-  const handleClick = (text, idx) => {
-    //selected = idx;
-    // console.log(`selected: ${selected}`)
-    setSelected(idx);
-    debugger;
-  };
+    <section className="courses-container">
+      {props.courses.map(function (value, idx, orginalArray) {
+        return <CourseCard course={value} />
+      })}
+    </section>
 
-  return (
-    <div>
-      <Courses />
-      <ul>
-        {names.map((v, idx) => (
-          <li
-            className={selected === idx ? 'active' : ''}
-            onClick={() => handleClick(v, idx)}
-          >
-            {v}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-
-  // return <ul>
-  //   {courses.map(function(courseItem, idx) {
-  //     return <li>{idx}.  {courseItem}</li>
-  //   })}
-  // </ul>
-
-  // return (
-  //   <ul>
-  //     <li className={selectedCourseIdx === 0 ? 'active' : ''}>Frontend</li>
-  //     <li className={selectedCourseIdx === 1 ? 'active' : ''}>Backend</li>
-  //     <li className={selectedCourseIdx === 2 ? 'active' : ''}>UI/UX</li>
-  //   </ul>
-  // );
+  </div>
 }
 
-export default App;
 
-const courses = [
-  'Front-End Web Development',
-  'Back-End Web Development',
-  'React JS Development',
-  'UI/UX Design',
-];
+/*
+1. 
+fetch(`https://fakestoreapi.com/products`)
+ .then(() => console.log('DONE'))
+ .catch(() => console.log('ERROR'))
 
-const urlSearchParams = location.search; // `?selectedCourseIdx=2`;
-const params = new URLSearchParams(urlSearchParams);
-const selectedCourseIdx = params.get("selectedCourseIdx");
+2. 
+fetch('https://fakestoreapi.com/products/1').then(function() {
+    console.log('DONE')
+}).catch(function() {
+    console.log('ERROR')
+})
 
-function Courses() {
-  const [selected, setSelected] = useState(
-    Number(selectedCourseIdx || 0)
-  );
+3. 
+const handleSuccess = () => console.log('DONE');
+const handleError = () => console.log('ERROR');
 
-  const handleCourseClick = (idx) => {
-    setSelected(idx);
-    // localStorage.setItem('selectedCourseIdx', idx);
-    const origin = location.origin;
-    const searchParams = `?selectedCourseIdx=${idx}`;
-    const url = origin + searchParams;
-    location.href = url;
-  };
-
-  return (
-    <div className="ui-courses">
-      <nav>
-        {courses.map((course, idx) => (
-          <span
-            onClick={() => handleCourseClick(idx)}
-            className={idx === selected ? 'active' : ''}
-          >
-            {course}
-          </span>
-        ))}
-      </nav>
-
-      <div className="ui-details">
-        <h4>Course Details</h4>
-        <h2>You have selected: {courses[selected]}</h2>
-      </div>
-    </div>
-  );
-}
+fetch('https://fakestoreapi.com/products/1')
+    .then(handleSuccess)
+    .catch(handleError)
+*/
