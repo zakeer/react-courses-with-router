@@ -5,9 +5,12 @@
 }
 
 .courses-container {
-  padding: 24px;
+  padding: 48px;
   display: flex;
-  gap: 16px
+  gap: 16px;
+  align-items: flex-start;
+  background: rgba(0,0,0,.05);
+
 }
 
 .course-card {
@@ -16,4 +19,66 @@
   border-radius: 8px;
 
   flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+.ui-course-section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.ui-course-section {
+  font-size: small;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ui-course-section ul {
+  padding-left: 24px;
+}
+
+.courses-accordion {
+  padding: 48px;
+  background: #7aa5da;
+}
+
+.ui-course-accordion-item {
+  padding: 16px 8px;
+  border-bottom: 1px solid;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+
+.ui-course-accordion-item h4 {
+  cursor: pointer;
+}
+
+.ui-courses-tabs {
+  display: flex;
+  padding: 48px;
+  background: #da7a7a;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ui-courses-tabs nav {
+  display: flex;
+  gap: 8px;
+}
+
+.ui-courses-tabs nav button.active {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.ui-tabs-section {
+  display: flex;
+  gap: 16px;
 }
