@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import CourseSection from './CourseSection'
+import { useSearchParams } from 'react-router'
 
 /* 
 ===>    <CourseTabs courses={[]} />
@@ -12,11 +13,21 @@ import CourseSection from './CourseSection'
 											v
 */
 function CourseTabs({ courses }) {
-	const [selectedTab, setSelectedTab] = useState(2) // ---> [value, updateFn];
+
+	const [params, setParams] = useSearchParams();
+
+	const [selectedTab, setSelectedTab] = useState(
+		Number(params.get("selectedCourse") || 0)
+	) // ---> [value, updateFn];
 	// const { courses } = props; // ---> const { courses } = props 
+
+	useEffect(() => {
+		setSelectedTab(Number(params.get("selectedCourse") || 0))
+	}, [params])
 
 
 	const selectedCourses = courses[selectedTab]
+	console.log(":: CourseTabs rendering...::")
 
 	return (
 		<div className='ui-courses-tabs'>
@@ -24,7 +35,16 @@ function CourseTabs({ courses }) {
 
 			<nav>
 				{courses?.map((course, idx) => <button
-					onClick={() => setSelectedTab(idx)}
+					onClick={() => {
+						// // 1. Update selected idx state
+						// setSelectedTab(idx);
+
+						// 2. Updated search params value
+						setParams((prevParams) => {
+							prevParams.set("selectedCourse", idx);
+							return prevParams;
+						})
+					}}
 					className={idx === selectedTab ? 'active' : ''}
 				>{course.title}</button>)}
 			</nav>
