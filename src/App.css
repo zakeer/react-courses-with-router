@@ -82,3 +82,11 @@
   display: flex;
   gap: 16px;
 }
+
+nav {
+  background: #e3e3e3;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;;
+}
